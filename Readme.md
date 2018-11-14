@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Павел Кощеев](https://up.htmlacademy.ru/javascript/16/user/488619).
-* Наставник: `Неизвестно`.
+* Наставник: [Павел Скрипкин](https://up.htmlacademy.ru/javascript/16/user/604273).
 
 ---
 

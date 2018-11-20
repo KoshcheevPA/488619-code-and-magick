@@ -8,10 +8,12 @@ var TEXT_HEIGHT = 20;
 var BAR_GAP = 50;
 var BAR_WIDTH = 40;
 var barHeight = 150;
+
 var renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
+
 var getMaxElement = function(arr) {
   var maxElement = arr[0];
 

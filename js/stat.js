@@ -32,7 +32,7 @@ var getMaxElement = function (arr) {
 };
 
 window.renderStatistics = function (ctx, names, times) {
-  renderCloud(ctx, CLOUD_POSITION_X  + CLOUD_SHADOW_GAP, CLOUD_POSITION_Y + CLOUD_SHADOW_GAP, 'rgba(0, 0, 0, 0.7)');
+  renderCloud(ctx, CLOUD_POSITION_X + CLOUD_SHADOW_GAP, CLOUD_POSITION_Y + CLOUD_SHADOW_GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_POSITION_X, CLOUD_POSITION_Y, '#ffffff');
 
   ctx.fillStyle = '#000';

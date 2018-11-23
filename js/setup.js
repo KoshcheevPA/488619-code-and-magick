@@ -37,9 +37,9 @@ var wizardOptions = [
 ];
 
 // var wizardCount = function (count) {
-  // for (var i = 0; i < count; i++) {
-    // wizardOptions.push(wizardOptions[i]]);
-  // }
+//  for (var i = 0; i < count; i++) {
+//  wizardOptions.push(wizardOptions[i]]);
+//  }
 // };
 // wizardCount(3);
 

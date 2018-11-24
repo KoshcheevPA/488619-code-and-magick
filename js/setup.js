@@ -13,35 +13,23 @@ var wizardRandomOptions = function (wizardOption) {
   return random;
 };
 
-var wizardOptions = [
-  {
-    name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
-    coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
-    eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]
-  },
-  {
-    name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
-    coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
-    eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]
-  },
-  {
-    name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
-    coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
-    eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]
-  },
-  {
-    name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
-    coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
-    eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]
-  }
-];
+var WIZARDS_NUMBER = 4;
+var wizardOptions = [];
 
-// var wizardCount = function (count) {
-//  for (var i = 0; i < count; i++) {
-//  wizardOptions.push(wizardOptions[i]]);
-//  }
-// };
-// wizardCount(3);
+var getWizard = function () {
+  var oneWizardOptions = {name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
+  coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
+  eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]};
+  return oneWizardOptions;
+};
+
+var wizardCount = function (number) {
+  for (var i = 0; i < number; i++) {
+    wizardOptions.push(getWizard());
+  }
+};
+
+wizardCount(WIZARDS_NUMBER);
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');

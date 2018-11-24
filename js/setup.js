@@ -17,9 +17,11 @@ var WIZARDS_NUMBER = 4;
 var wizardOptions = [];
 
 var getWizard = function () {
-  var oneWizardOptions = {name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
-  coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
-  eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]};
+  var oneWizardOptions = {
+    name: wizardNames[wizardRandomOptions(wizardNames)] + ' ' + wizardSurnames[wizardRandomOptions(wizardSurnames)],
+    coatColor: wizardCoatColor[wizardRandomOptions(wizardCoatColor)],
+    eyesColor: wizardEyesColor[wizardRandomOptions(wizardEyesColor)]
+  };
   return oneWizardOptions;
 };
 

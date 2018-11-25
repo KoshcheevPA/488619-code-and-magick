@@ -18,7 +18,6 @@ var getRandomItem = function (array) {
 };
 
 var WIZARDS_NUMBER = 4;
-var wizardOptions = [];
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
@@ -35,6 +34,7 @@ var renderWizard = function (wizard) {
 
 
 var getWizards = function (number) {
+  var wizardOptions = [];
   for (var i = 0; i < number; i++) {
     var oneWizardOptions = {
       name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),

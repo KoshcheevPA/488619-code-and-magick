@@ -20,19 +20,6 @@ var getRandomItem = function (array) {
 var WIZARDS_NUMBER = 4;
 var wizardOptions = [];
 
-var getWizard = function (number) {
-  for (var i = 0; i < number; i++) {
-    var oneWizardOptions = {
-      name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
-      coatColor: getRandomItem(WIZARD_COAT_COLOR),
-      eyesColor: getRandomItem(WIZARD_EYES_COLOR)
-    };
-    wizardOptions.push(oneWizardOptions);
-  }
-};
-
-getWizard(WIZARDS_NUMBER);
-
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
@@ -46,11 +33,24 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizardOptions.length; i++) {
-  fragment.appendChild(renderWizard(wizardOptions[i]));
-}
 
-similarListElement.appendChild(fragment);
+var getWizards = function (number) {
+  for (var i = 0; i < number; i++) {
+    var oneWizardOptions = {
+      name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
+      coatColor: getRandomItem(WIZARD_COAT_COLOR),
+      eyesColor: getRandomItem(WIZARD_EYES_COLOR)
+    };
+    wizardOptions.push(oneWizardOptions);
+  }
+  var fragment = document.createDocumentFragment();
+  for (var i = 0; i < wizardOptions.length; i++) {
+    fragment.appendChild(renderWizard(wizardOptions[i]));
+  }
+  similarListElement.appendChild(fragment);
+  return wizardOptions;
+};
+
+getWizards(WIZARDS_NUMBER);
 
 document.querySelector('.setup-similar').classList.remove('hidden');

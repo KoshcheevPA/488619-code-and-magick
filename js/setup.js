@@ -6,7 +6,7 @@ var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 var setupOpenIcon = setupOpen.querySelector('.setup-open-icon');
-var userName = setup.querySelector('.setup-user-name');
+// var userName = setup.querySelector('.setup-user-name');
 var ESCAPE_BUTTON = 27;
 var ENTER_BUTTON = 13;
 var setupWizard = document.querySelector('.setup-wizard');
@@ -33,7 +33,7 @@ changeElementColor(WIZARD_EYES_COLOR, wizardEyes);
 
 setupWizardWrap.addEventListener('click', function () {
   setupWizardWrap.style.backgroundColor = getRandomItem(FIREBALL_COLOR);
-  setupWizardWrapInput.type = image;
+  setupWizardWrapInput.type = 'image';
 });
 
 
@@ -108,8 +108,8 @@ var getWizards = function (number) {
     wizardOptions.push(oneWizardOptions);
   }
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < wizardOptions.length; i++) {
-    fragment.appendChild(renderWizard(wizardOptions[i]));
+  for (var j = 0; j < wizardOptions.length; j++) {
+    fragment.appendChild(renderWizard(wizardOptions[j]));
   }
   similarListElement.appendChild(fragment);
   return wizardOptions;

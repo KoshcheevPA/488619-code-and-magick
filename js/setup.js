@@ -25,7 +25,7 @@ var FIREBALL_COLOR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var changeElementColor = function (colorsArray, element, valueElement) {
   element.addEventListener('click', function () {
-    var elementColor = getRandomItem(colorsArray)
+    var elementColor = getRandomItem(colorsArray);
     element.style.fill = elementColor;
     valueElement.value = elementColor;
   });

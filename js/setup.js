@@ -6,7 +6,7 @@ var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 var setupOpenIcon = setupOpen.querySelector('.setup-open-icon');
-// var userName = setup.querySelector('.setup-user-name');
+var userName = setup.querySelector('.setup-user-name');
 var ESCAPE_BUTTON = 27;
 var ENTER_BUTTON = 13;
 var setupWizard = document.querySelector('.setup-wizard');
@@ -43,7 +43,7 @@ setupWizardWrap.addEventListener('click', function () {
 
 
 var onPopupEscPress = function (evt) {
-  if (evt.keyCode === ESCAPE_BUTTON) {
+  if (userName !== evt.target && evt.keyCode === ESCAPE_BUTTON) {
     closePopup();
   }
 };
@@ -63,7 +63,7 @@ setupOpen.addEventListener('click', function () {
 });
 
 setupOpenIcon.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ENTER_BUTTON) {
+if (evt.keyCode === ENTER_BUTTON) {
     openPopup();
   }
 });

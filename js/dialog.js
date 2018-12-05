@@ -6,7 +6,6 @@ var setupUserPic = setupDialog.querySelector('.upload');
 setupUserPic.addEventListener('mousedown', function (evt) {
   evt.preventDefault();
 
-
   var startCoords = {
     x: evt.clientX,
     y: evt.clientY

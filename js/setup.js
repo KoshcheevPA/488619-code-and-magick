@@ -50,6 +50,7 @@ var onPopupEscPress = function (evt) {
 var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
+  setupDialog.removeAttribute('style');
 };
 
 var openPopup = function () {

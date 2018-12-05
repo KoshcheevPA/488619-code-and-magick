@@ -32,18 +32,18 @@ setupUserPic.addEventListener('mousedown', function (evt) {
   };
 
   var onMouseUp = function (evtUp) {
-      evtUp.preventDefault();
+    evtUp.preventDefault();
 
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
 
-      if (dragged) {
-        var onClickPreventDefault = function (evt) {
-          evt.preventDefault();
-          setupUserPic.removeEventListener('click', onClickPreventDefault);
-        };
-        setupUserPic.addEventListener('click', onClickPreventDefault);
-      }
+    if (dragged) {
+      var onClickPreventDefault = function (evtClick) {
+        evtClick.preventDefault();
+        setupUserPic.removeEventListener('click', onClickPreventDefault);
+      };
+      setupUserPic.addEventListener('click', onClickPreventDefault);
+    }
   };
 
   document.addEventListener('mousemove', onMouseMove);

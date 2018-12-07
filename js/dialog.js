@@ -1,51 +1,54 @@
 'use strict';
 
-var setupDialog = document.querySelector('.setup');
-var setupUserPic = setupDialog.querySelector('.upload');
+(function () {
 
-setupUserPic.addEventListener('mousedown', function (evt) {
-  evt.preventDefault();
+  var setupDialog = document.querySelector('.setup');
+  var setupUserPic = setupDialog.querySelector('.upload');
 
-  var startCoords = {
-    x: evt.clientX,
-    y: evt.clientY
-  };
+  setupUserPic.addEventListener('mousedown', function (evt) {
+    evt.preventDefault();
 
-  var dragged = false;
-
-  var onMouseMove = function (evtMove) {
-    evtMove.preventDefault();
-    dragged = true;
-
-    var shift = {
-      x: startCoords.x - evtMove.clientX,
-      y: startCoords.y - evtMove.clientY
+    var startCoords = {
+      x: evt.clientX,
+      y: evt.clientY
     };
 
-    startCoords = {
-      x: evtMove.clientX,
-      y: evtMove.clientY
-    };
+    var dragged = false;
 
-    setupDialog.style.top = (setupDialog.offsetTop - shift.y) + 'px';
-    setupDialog.style.left = (setupDialog.offsetLeft - shift.x) + 'px';
-  };
+    var onMouseMove = function (evtMove) {
+      evtMove.preventDefault();
+      dragged = true;
 
-  var onMouseUp = function (evtUp) {
-    evtUp.preventDefault();
-
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
-
-    if (dragged) {
-      var onClickPreventDefault = function (evtClick) {
-        evtClick.preventDefault();
-        setupUserPic.removeEventListener('click', onClickPreventDefault);
+      var shift = {
+        x: startCoords.x - evtMove.clientX,
+        y: startCoords.y - evtMove.clientY
       };
-      setupUserPic.addEventListener('click', onClickPreventDefault);
-    }
-  };
 
-  document.addEventListener('mousemove', onMouseMove);
-  document.addEventListener('mouseup', onMouseUp);
-});
+      startCoords = {
+        x: evtMove.clientX,
+        y: evtMove.clientY
+      };
+
+      setupDialog.style.top = (setupDialog.offsetTop - shift.y) + 'px';
+      setupDialog.style.left = (setupDialog.offsetLeft - shift.x) + 'px';
+    };
+
+    var onMouseUp = function (evtUp) {
+      evtUp.preventDefault();
+
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+
+      if (dragged) {
+        var onClickPreventDefault = function (evtClick) {
+          evtClick.preventDefault();
+          setupUserPic.removeEventListener('click', onClickPreventDefault);
+        };
+        setupUserPic.addEventListener('click', onClickPreventDefault);
+      }
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+})();

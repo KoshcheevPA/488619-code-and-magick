@@ -22,11 +22,8 @@
       onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
     });
 
-
     xhr.open('GET', URL);
     xhr.send();
-
-    console.log(xhr);
   };
 
   var backendSave = function (data, onLoad, onError) {

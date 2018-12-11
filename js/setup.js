@@ -115,4 +115,8 @@
 
   document.querySelector('.setup-similar').classList.remove('hidden');
 
+  window.setup = {
+    closePopup: closePopup
+  };
+
 })();

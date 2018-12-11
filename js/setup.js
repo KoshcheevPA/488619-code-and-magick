@@ -2,9 +2,9 @@
 
 (function () {
 
-  var WIZARDS_NUMBER = 4;
-  var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-  var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+  // var WIZARDS_NUMBER = 4;
+  // var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+  // var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
   var WIZARD_COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
   var WIZARD_EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
   var FIREBALL_COLOR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
@@ -114,7 +114,7 @@
 
   var getErrorMessage = function (errorMessage) {
     var errorWindow = document.createElement('div');
-    errorWindow.style = 'z-index: 100; position: absolute; left: 0; rigth: 0; padding: 20px; margin: 0 auto; text-align: center; font-size: 25px; background-color: rgba(255, 0, 0, 0.95); box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.3);';
+    errorWindow.style = 'z-index: 100; position: absolute; left: 0; rigth: 0; padding: 10px; margin: 0 auto; text-align: center; font-size: 25px; background-color: rgba(255, 0, 0, 0.95); box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.3);';
     errorWindow.textContent = errorMessage;
     document.body.insertAdjacentElement('afterbegin', errorWindow);
   };
@@ -123,7 +123,8 @@
   document.querySelector('.setup-similar').classList.remove('hidden');
 
   window.setup = {
-    closePopup: closePopup
+    closePopup: closePopup,
+    getErrorMessage: getErrorMessage
   };
 
 })();

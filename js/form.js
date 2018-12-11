@@ -2,16 +2,13 @@
 
 (function () {
   var setupForm = document.querySelector('.setup-wizard-form');
-  var setup = document.querySelector('.setup');
 
   var onFormSubmit = function (evt) {
     var saveForm = function () {
       window.setup.closePopup();
     };
-    var saveError = function () {
-      console.log('Ошибка');
-    };
-    window.backend.save(new FormData(setupForm), saveForm, saveError);
+
+    window.backend.save(new FormData(setupForm), saveForm, window.setup.getErrorMessage);
     evt.preventDefault();
   };
 

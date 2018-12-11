@@ -111,7 +111,14 @@
     }
     similarListElement.appendChild(fragment);
   };
-  window.backend.load(getWizards, 'error');
+
+  var getErrorMessage = function (errorMessage) {
+    var errorWindow = document.createElement('div');
+    errorWindow.style = 'z-index: 100; position: absolute; left: 0; rigth: 0; padding: 20px; margin: 0 auto; text-align: center; font-size: 25px; background-color: rgba(255, 0, 0, 0.95); box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.3);';
+    errorWindow.textContent = errorMessage;
+    document.body.insertAdjacentElement('afterbegin', errorWindow);
+  };
+  window.backend.load(getWizards, getErrorMessage);
 
   document.querySelector('.setup-similar').classList.remove('hidden');
 

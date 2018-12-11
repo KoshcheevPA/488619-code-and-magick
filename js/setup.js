@@ -107,7 +107,9 @@
   var getWizards = function (wizards) {
     var fragment = document.createDocumentFragment();
     for (var j = 0; j < 4; j++) {
-      fragment.appendChild(renderWizard(getRandomItem(wizards)));
+      var randomWizard = getRandomItem(wizards);
+      fragment.appendChild(renderWizard(randomWizard));
+      wizards.splice(wizards.indexOf(randomWizard), 1);
     }
     similarListElement.appendChild(fragment);
   };

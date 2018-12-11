@@ -2,7 +2,7 @@
 
 (function () {
 
-  // var WIZARDS_NUMBER = 4;
+  var WIZARDS_NUMBER = 4;
   // var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
   // var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
   var WIZARD_COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
@@ -106,7 +106,7 @@
 
   var getWizards = function (wizards) {
     var fragment = document.createDocumentFragment();
-    for (var j = 0; j < 4; j++) {
+    for (var j = 0; j < WIZARDS_NUMBER; j++) {
       var randomWizard = getRandomItem(wizards);
       fragment.appendChild(renderWizard(randomWizard));
       wizards.splice(wizards.indexOf(randomWizard), 1);

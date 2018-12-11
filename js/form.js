@@ -4,11 +4,7 @@
   var setupForm = document.querySelector('.setup-wizard-form');
 
   var onFormSubmit = function (evt) {
-    var saveForm = function () {
-      window.setup.closePopup();
-    };
-
-    window.backend.save(new FormData(setupForm), saveForm, window.setup.getErrorMessage);
+    window.backend.save(new FormData(setupForm), window.setup.closePopup, window.setup.getErrorMessage);
     evt.preventDefault();
   };
 
